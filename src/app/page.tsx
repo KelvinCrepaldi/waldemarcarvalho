@@ -1,4 +1,5 @@
 "use client";
+import ImageCard from "@/components/imageCard";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -22,27 +23,9 @@ export default function Home(): JSX.Element {
   /*   */
 
   return (
-    <main className="columns-xs gap-0">
-      <Image
-        className="w-full h-auto"
-        objectFit=""
-        src={`/images/image1.webp`}
-        width={400}
-        height={400}
-        alt="image"
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-      />
+    <main className="columns-xs gap-0 overflow-clip">
       {images?.map((image: any, index: number) => (
-        <Image
-          key={index}
-          className="w-full h-auto"
-          objectFit=""
-          src={`/images/${image}`}
-          width={400}
-          height={400}
-          alt="image"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
+        <ImageCard image={image} key={index} index={index}></ImageCard>
       ))}
     </main>
   );
