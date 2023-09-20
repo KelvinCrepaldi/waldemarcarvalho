@@ -23,6 +23,15 @@ export default function Home(): JSX.Element {
 
   return (
     <main className="columns-xs gap-0">
+      <Image
+        className="w-full h-auto"
+        objectFit=""
+        src={`/images/image1.webp`}
+        width={400}
+        height={400}
+        alt="image"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      />
       {images?.map((image: any, index: number) => (
         <Image
           key={index}
